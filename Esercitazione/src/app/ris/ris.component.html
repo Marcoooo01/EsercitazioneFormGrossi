@@ -1,0 +1,24 @@
+<br>
+<label>Risultato:</label><br>
+{{risultato}}<br>
+<br>
+<label>Numeri in ordine:</label><br>
+<span *ngFor="let a of n_vet"> {{a}} |</span>
+<br>
+<br>
+<button type="submit" class="btn btn-primary" (click)="hide()">mostra/nascondi email</button><br>
+<br>
+<form *ngIf ="b" [formGroup]="myForm2" (ngSubmit)="onSubmit(myForm2.value)">
+    <input type="email" placeholder="example@gmail.com" name="email" [formControl]="myForm2.controls['email']" class="form-control"><br>
+    
+    <div *ngIf="!myForm2.controls['email'].valid"
+         class="alert alert-danger">L'Email è invalida
+   </div>
+   <div *ngIf="myForm2.controls['email'].hasError('required')"
+         class="alert alert-danger">L'Email è richiesta
+   </div>
+
+    <button type="submit" class="btn btn-primary">Invia email</button>
+</form><br>
+<div *ngIf="!myForm2.valid"
+ class="alert alert-danger">La seconda Form è invalida</div>

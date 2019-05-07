@@ -1,0 +1,39 @@
+<div class="container">
+ <h2>Calcolatrice</h2>
+ <form [formGroup]="myForm" class="jumbotron">
+   <div class="form-group">
+     <label>Numero 1</label>
+     <input type="number" name="n1" 
+            [formControl]="myForm.controls['n1']" class="form-control">
+   </div>
+   <div *ngIf="!myForm.controls['n1'].valid"
+         class="alert alert-danger">Il primo numero è invalido
+   </div>
+   <div *ngIf="myForm.controls['n1'].hasError('required')"
+         class="alert alert-danger">Il primo numero è richiesto
+   </div>
+
+   <div class="form-group">
+     <label>Numero 2</label>
+     <input type="number" name="n2" 
+            [formControl]="myForm.controls['n2']" class="form-control">
+   </div>
+   <div *ngIf="!myForm.controls['n2'].valid"
+         class="alert alert-danger">Il secondo numero è invalido
+   </div>
+   <div *ngIf="myForm.controls['n2'].hasError('required')"
+         class="alert alert-danger">Il secondo numero è richiesto
+   </div>
+
+   <br>
+   <button (click)="sum()" type="submit" class="btn btn-primary">+</button>
+   <button (click)="sot()" type="submit" class="btn btn-primary">-</button>
+   <button (click)="mol()" type="submit" class="btn btn-primary">*</button>
+   <button (click)="div()" type="submit" class="btn btn-primary">/</button>
+   <br>
+   <app-ris *ngIf="risultato" [risultato]="risultato" [n_vet]="num_vett"></app-ris>
+ </form>
+ <div *ngIf="!myForm.valid"
+ class="alert alert-danger">La Form è invalida
+</div>
+</div>
