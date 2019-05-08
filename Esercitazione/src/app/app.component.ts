@@ -49,20 +49,20 @@ export class AppComponent {
   
    fillVect()
     {
-        if (this.myForm.controls['n1'].value < this.myForm.controls['n2']) {
+        if (this.myForm.controls['n1'].value < this.myForm.controls['n2'].value) {
             this.num_vett = new Array<number>();
-        for(let i = this.myForm.controls['n1'].value; i <=this.myForm.controls['n2'].value; i++)
-        {
-            this.num_vett.push(i);
-        }
+            for(let i = this.myForm.controls['n1'].value; i <=this.myForm.controls['n2'].value; i++)
+            {
+                this.num_vett.push(i);
+            }
         }
         else
         {
             this.num_vett = new Array<number>();
-        for(let i = this.myForm.controls['n2'].value; i <=this.myForm.controls['n1'].value; i++)
-        {
-            this.num_vett.push(i);
-        }
+            for(let i = this.myForm.controls['n2'].value; i <=this.myForm.controls['n1'].value; i++)
+            {
+                this.num_vett.push(i);
+            }
         }
         
     }
