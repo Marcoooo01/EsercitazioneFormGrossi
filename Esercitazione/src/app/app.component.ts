@@ -19,7 +19,7 @@ export class AppComponent {
     
     
     this.myForm = fb.group({
-      'n1': ['0', Validators.required], 'n2': ['0', Validators.required]
+      'n1': ['', Validators.required], 'n2': ['', Validators.required]
     });
   }
   

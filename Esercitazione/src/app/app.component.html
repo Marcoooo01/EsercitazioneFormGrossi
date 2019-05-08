@@ -1,9 +1,11 @@
 <div class="container">
- <h2>Calcolatrice</h2>
  <form [formGroup]="myForm" class="jumbotron">
+   <h2>Calcolatrice</h2>
+   <br>
+   <br>
    <div class="form-group">
      <label>Numero 1</label>
-     <input type="number" name="n1" 
+     <input type="number" name="n1" placeholder="0"
             [formControl]="myForm.controls['n1']" class="form-control">
    </div>
    <div *ngIf="!myForm.controls['n1'].valid"
@@ -15,7 +17,7 @@
 
    <div class="form-group">
      <label>Numero 2</label>
-     <input type="number" name="n2" 
+     <input type="number" name="n2" placeholder="0"
             [formControl]="myForm.controls['n2']" class="form-control">
    </div>
    <div *ngIf="!myForm.controls['n2'].valid"
@@ -32,8 +34,7 @@
    <button (click)="div()" type="submit" class="btn btn-primary">/</button>
    <br>
    <app-ris *ngIf="risultato" [risultato]="risultato" [n_vet]="num_vett"></app-ris>
+   <br>
+   <div *ngIf="!myForm.valid" class="alert alert-danger">La Form è invalida</div>
  </form>
- <div *ngIf="!myForm.valid"
- class="alert alert-danger">La Form è invalida
-</div>
 </div>
